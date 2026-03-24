@@ -8,6 +8,7 @@
 #   repo    — GitHub owner/repo (e.g., simonspoon/limbo)
 #
 # Requires: gh CLI (authenticated)
+# Compatible with bash 3.x (macOS default)
 
 set -euo pipefail
 
@@ -31,33 +32,38 @@ trap 'rm -rf "$TMPDIR"' EXIT
 echo "Downloading release assets for ${REPO}@${TAG}..."
 gh release download "$TAG" --repo "$REPO" --dir "$TMPDIR" --pattern '*.tar.gz' --pattern '*-darwin-*' --pattern '*-linux-*' --pattern '*-macos-*' 2>/dev/null || true
 
-# Build a map of asset filename -> sha256
-declare -A CHECKSUMS
+# Build checksum file: each line is "filename sha256"
+CHECKSUM_FILE="$TMPDIR/.checksums"
+asset_count=0
 for file in "$TMPDIR"/*; do
   [[ -f "$file" ]] || continue
-  basename="$(basename "$file")"
+  fname="$(basename "$file")"
   sha="$(shasum -a 256 "$file" | awk '{print $1}')"
-  CHECKSUMS["$basename"]="$sha"
-  echo "  $basename: $sha"
+  echo "$fname $sha" >> "$CHECKSUM_FILE"
+  echo "  $fname: $sha"
+  asset_count=$((asset_count + 1))
 done
 
-if [[ ${#CHECKSUMS[@]} -eq 0 ]]; then
+if [[ "$asset_count" -eq 0 ]]; then
   echo "Error: No assets downloaded for ${REPO}@${TAG}" >&2
   exit 1
 fi
+
+# Lookup function: get sha256 for an asset name
+get_checksum() {
+  local name="$1"
+  grep "^${name} " "$CHECKSUM_FILE" | awk '{print $2}'
+}
 
 # Update version line
 sed -i '' "s|^  version \".*\"|  version \"${VERSION}\"|" "$FORMULA_FILE"
 
 # Update all url lines: replace the version in the URL path
-# URLs look like: .../releases/download/vX.Y.Z/asset-name
-# We replace the tag portion and update the asset name's version if embedded
 OLD_TAG_PATTERN='releases/download/v[0-9][0-9.]*/'
 NEW_TAG_PREFIX="releases/download/${TAG}/"
 sed -i '' "s|${OLD_TAG_PATTERN}|${NEW_TAG_PREFIX}|g" "$FORMULA_FILE"
 
-# Now update sha256 values by matching the url on the preceding line
-# Read the formula and process line by line
+# Update sha256 values by matching the url on the preceding line
 TEMP_FORMULA="$(mktemp)"
 prev_url=""
 while IFS= read -r line; do
@@ -72,8 +78,9 @@ while IFS= read -r line; do
   if [[ "$line" =~ ^([[:space:]]*)sha256\ \" && -n "$prev_url" ]]; then
     asset_name="$(basename "$prev_url")"
     indent="${BASH_REMATCH[1]}"
-    if [[ -n "${CHECKSUMS[$asset_name]:-}" ]]; then
-      echo "${indent}sha256 \"${CHECKSUMS[$asset_name]}\"" >> "$TEMP_FORMULA"
+    new_sha="$(get_checksum "$asset_name")"
+    if [[ -n "$new_sha" ]]; then
+      echo "${indent}sha256 \"${new_sha}\"" >> "$TEMP_FORMULA"
     else
       echo "Warning: No checksum found for asset: $asset_name" >&2
       echo "$line" >> "$TEMP_FORMULA"
