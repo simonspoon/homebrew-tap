@@ -26,35 +26,10 @@ class Qorvex < Formula
     (share/"qorvex/agent").install Dir["agent/*"]
   end
 
-  def post_install
-    agent_dir = share/"qorvex/agent"
-    xcodeproj = agent_dir/"QorvexAgent.xcodeproj"
-    return unless xcodeproj.exist?
-
-    ohai "Building qorvex-agent for iOS Simulator..."
-    system "xcodebuild", "build-for-testing",
-           "-project", xcodeproj,
-           "-scheme", "QorvexAgentUITests",
-           "-destination", "generic/platform=iOS Simulator",
-           "-derivedDataPath", agent_dir/".build",
-           "-quiet"
-  end
-
   def caveats
     <<~EOS
-      The Swift agent was built for iOS Simulator during installation.
-
-      To build for physical devices (requires Apple Developer account):
-        xcodebuild build-for-testing \\
-          -project #{share}/qorvex/agent/QorvexAgent.xcodeproj \\
-          -scheme QorvexAgentUITests \\
-          -destination "generic/platform=iOS" \\
-          -derivedDataPath #{share}/qorvex/agent/.build \\
-          DEVELOPMENT_TEAM=<your-team-id> \\
-          CODE_SIGN_STYLE=Automatic \\
-          CODE_SIGN_IDENTITY="Apple Development" \\
-          CODE_SIGNING_ALLOWED=YES \\
-          -allowProvisioningUpdates
+      The agent source is installed at #{share}/qorvex/agent.
+      It builds and deploys automatically on first use.
     EOS
   end
 
