@@ -1,26 +1,26 @@
 class Suda < Formula
   desc "Structured memory and knowledge management CLI for AI agent workflows"
   homepage "https://github.com/simonspoon/suda"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/suda/releases/download/v0.1.0/suda-darwin-arm64"
-      sha256 "b0c82294f239b929d5d0e377107eab7780cbc4714a4bd06e822a99613185b3a8"
+      url "https://github.com/simonspoon/suda/releases/download/v0.2.0/suda-darwin-arm64"
+      sha256 "73352aa801a6a92aac7fa35053f6a7f2d18d6b04351578708c2d61c166a2d72a"
     else
-      url "https://github.com/simonspoon/suda/releases/download/v0.1.0/suda-darwin-amd64"
-      sha256 "6d359a2f69019b01dfcad55d0a3ac2a9b1d8c9355e4d06a4f317f23875a2c7a5"
+      url "https://github.com/simonspoon/suda/releases/download/v0.2.0/suda-darwin-amd64"
+      sha256 "9fef5ad36e91d3f566ae716a2a49b882bcf6609b03e397645bfaa96ffe4c438f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/suda/releases/download/v0.1.0/suda-linux-arm64"
-      sha256 "cb128a232235c9a2918d6f987895c6e5f51ce14ac4adbd8fca39809597a6f491"
+      url "https://github.com/simonspoon/suda/releases/download/v0.2.0/suda-linux-arm64"
+      sha256 "f4978a647b01009811683edac56125b1321c7828c89db06f8e1adbd8a33b4c6a"
     else
-      url "https://github.com/simonspoon/suda/releases/download/v0.1.0/suda-linux-amd64"
-      sha256 "db601c51a99cab62a26abd685edf7b9d09b57aed56f44fc3b74c438eec576325"
+      url "https://github.com/simonspoon/suda/releases/download/v0.2.0/suda-linux-amd64"
+      sha256 "f2840da3d7a15bd5372e2e9c0cc96d33287330b0fde82caa044d74178728228c"
     end
   end
 
