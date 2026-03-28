@@ -7,20 +7,20 @@ class Limbo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/limbo/releases/download/v0.2.0/limbo-darwin-arm64"
-      sha256 "338c97e2dfb667041e4c3699546cdef6473ea0fa5d00e870b583db81d105daca"
+      sha256 "4ca9f84950f1f06f58a18e7f7028db08fa3de61515581c9262f4ee13a21f338b"
     else
       url "https://github.com/simonspoon/limbo/releases/download/v0.2.0/limbo-darwin-amd64"
-      sha256 "b5e828288dc4fe1a655ac848a644ad5bba9813944cd74b3fb61edea9d789471b"
+      sha256 "1170f6add3e7ba6e22a28bea8358bf079662d65979b294056986de93892bc2eb"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/limbo/releases/download/v0.2.0/limbo-linux-arm64"
-      sha256 "519d6c9fae3938080374b95528101d698545e982b3710b9137fbe0e74eba6770"
+      sha256 "ada5bae5c9248ccc4704502ae43692307b5a922daffde4d1e1502d0cabf9520d"
     else
       url "https://github.com/simonspoon/limbo/releases/download/v0.2.0/limbo-linux-amd64"
-      sha256 "8628549daf6baed495cbfde6b51d1466c44183c086bb43f33852cd87e8d6d0f1"
+      sha256 "09cfff0c55b7395cf42b7bfcfd967a93a1c0faeca226a5e9334cba5fc6337781"
     end
   end
 
