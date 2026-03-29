@@ -9,10 +9,11 @@ class Qorvex < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/qorvex/releases/download/v0.2.2/qorvex-macos-arm64.tar.gz"
+      url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-arm64.tar.gz"
       sha256 "cd21d8ae40bdec2e631e57bb0e5e620a3bcfd443bf2d92aedda650b90038e530"
     else
-      odie "qorvex is only available for Apple Silicon (arm64) Macs."
+      url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-x86_64.tar.gz"
+      sha256 "d8d5fbc6348e7b96dffc9bb1418dd554ff6672b3fa26fc858458fa0c95c9d83a"
     end
   end
 
