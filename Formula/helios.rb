@@ -1,26 +1,26 @@
 class Helios < Formula
   desc "Tree-sitter code indexing CLI with SQLite storage"
   homepage "https://github.com/simonspoon/helios"
-  version "0.6.0"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/helios/releases/download/v0.6.0/helios-darwin-arm64"
-      sha256 "e2ff9fb76c2255dba3d13b3967905a8e3774e3bcaae4afd1432e5d35fe75f698"
+      url "https://github.com/simonspoon/helios/releases/download/v0.7.0/helios-darwin-arm64"
+      sha256 "93e9768c5784288d41f997910bbf0a3430f111e585e0e3751704c070f7fb8190"
     else
-      url "https://github.com/simonspoon/helios/releases/download/v0.6.0/helios-darwin-amd64"
-      sha256 "0d1438f3023d12bbc0a70268366102708e105a2ec9e1b7df39f81c7603c43031"
+      url "https://github.com/simonspoon/helios/releases/download/v0.7.0/helios-darwin-amd64"
+      sha256 "b42b4d0606f2533657fe323db7791b4cf717f56692e58538afde3686eb0cad92"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/helios/releases/download/v0.6.0/helios-linux-arm64"
-      sha256 "87f37550848d58c71ff3bfd7f079564468216e414c4ea4aff82f2147c7bb3fcc"
+      url "https://github.com/simonspoon/helios/releases/download/v0.7.0/helios-linux-arm64"
+      sha256 "0859ce12a7d9f4566f8992bdd934830d209110a7db9d5512beb8d089e5bab6d1"
     else
-      url "https://github.com/simonspoon/helios/releases/download/v0.6.0/helios-linux-amd64"
-      sha256 "ac36572f3bbfec5326789c947932a809d7a42e356146e387d96113bb17092df9"
+      url "https://github.com/simonspoon/helios/releases/download/v0.7.0/helios-linux-amd64"
+      sha256 "a1b05ed9d448bedc0b518d3469b3288792291c9d962a803fc74be5e3f5457201"
     end
   end
 
