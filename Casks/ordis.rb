@@ -1,6 +1,6 @@
 cask "ordis" do
-  version "0.7.0"
-  sha256 "6fe5dcb6c3fccdd41ea6ca5e062f7fad0df720780d815d8b96716bbaa647cd35"
+  version "0.8.0"
+  sha256 "d1f8ead4e9210f0f33196af0e2735d62961e221ae6bd586b2d84cbbc62d54687"
 
   url "https://github.com/simonspoon/ordis/releases/download/v#{version}/Ordis_#{version}_universal.dmg"
   name "Ordis"
