@@ -1,26 +1,26 @@
 class Khora < Formula
   desc "Web app QA automation CLI via Chrome DevTools Protocol"
   homepage "https://github.com/simonspoon/khora"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/khora/releases/download/v0.2.0/khora-darwin-arm64"
-      sha256 "d2e6219621339ad3eb5e3bd16154ab9d3e3572609d4fdfbd97f3fd6e90db04ef"
+      url "https://github.com/simonspoon/khora/releases/download/v0.3.0/khora-darwin-arm64"
+      sha256 "853011cadb278ecdd5e0d22c0299ba49f2de35525dd0aa062b141c6286e33e53"
     else
-      url "https://github.com/simonspoon/khora/releases/download/v0.2.0/khora-darwin-amd64"
-      sha256 "a4efec0d9d77a0d1b3b3c0f6b1815d9e0e1046ab11416b324fc1aea188ffdb54"
+      url "https://github.com/simonspoon/khora/releases/download/v0.3.0/khora-darwin-amd64"
+      sha256 "9fa6f53873c79b02fbaaa330acfc0efca8fca941e874c1b6514202d765387a11"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/khora/releases/download/v0.2.0/khora-linux-arm64"
-      sha256 "ef576df69f5bb84dd1c25dd0bb61cc92719c2679a5a24fdb7d4993516c94dee0"
+      url "https://github.com/simonspoon/khora/releases/download/v0.3.0/khora-linux-arm64"
+      sha256 "d5ce27e87e70bb1c5cb3b124186d3ec09eef373480a4d4468cc1f48265a82056"
     else
-      url "https://github.com/simonspoon/khora/releases/download/v0.2.0/khora-linux-amd64"
-      sha256 "450eb76ff829bdfc28c6acf0887e6ff4f3691f4d5041abc11047405d7d7412e8"
+      url "https://github.com/simonspoon/khora/releases/download/v0.3.0/khora-linux-amd64"
+      sha256 "7053576d36fae8c174ae992d6aab13fb55792de030e1930a9779248c9307318c"
     end
   end
 
