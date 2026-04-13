@@ -1,18 +1,18 @@
 class Loki < Formula
   desc "Desktop app automation CLI for macOS QA testing"
   homepage "https://github.com/simonspoon/loki"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   depends_on :macos
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/loki/releases/download/v0.2.0/loki-darwin-arm64"
-      sha256 "1fed365f0c8051e87c6a8628eb6c5d87fcae3b38fb10447c3ebb70047288e422"
+      url "https://github.com/simonspoon/loki/releases/download/v0.2.1/loki-darwin-arm64"
+      sha256 "4aad59d5dc863cba140c3fc3654e29ab93878e8d0de22a4a8eea3c95a25027f6"
     else
-      url "https://github.com/simonspoon/loki/releases/download/v0.2.0/loki-darwin-amd64"
-      sha256 "5bf7d61cd9ded4d9e4a4ddf1da1be74b076f60711133f0f20944e5cdc7e6f61f"
+      url "https://github.com/simonspoon/loki/releases/download/v0.2.1/loki-darwin-amd64"
+      sha256 "a5b1177e7a9c22d587c3fbd07963a63292c59a05e3526f27f5e66bfb49a94a5a"
     end
   end
 
