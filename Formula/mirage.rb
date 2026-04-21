@@ -1,26 +1,26 @@
 class Mirage < Formula
   desc "Swagger 2.0 mock API server with SQLite-backed fake data"
   homepage "https://github.com/simonspoon/mirage"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/mirage/releases/download/v0.4.0/mirage-darwin-arm64"
-      sha256 "1c5c8bbda45cdc57e6e0108552e409195b3a447b4a387a4295c635bf5600b247"
+      url "https://github.com/simonspoon/mirage/releases/download/v0.5.0/mirage-darwin-arm64"
+      sha256 "9db1f80d88e980e4de5b761bb4e1e74ce232b79f048bde58eae85f049185e054"
     else
-      url "https://github.com/simonspoon/mirage/releases/download/v0.4.0/mirage-darwin-amd64"
-      sha256 "7d4a70730ee2c8d6416b44a41bad89475021a6ff0176f71f38e3c777190659e8"
+      url "https://github.com/simonspoon/mirage/releases/download/v0.5.0/mirage-darwin-amd64"
+      sha256 "a37476f5736ac3853e1521064db9c675ee5f179627c92806f02ff73b2dce5012"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/mirage/releases/download/v0.4.0/mirage-linux-arm64"
-      sha256 "beb4e30dc6c3479eb883cf51345f0b8ca999cbeca8c67b343a9fdc4c18f5a08a"
+      url "https://github.com/simonspoon/mirage/releases/download/v0.5.0/mirage-linux-arm64"
+      sha256 "754699d9d3f5dd77ca4eca9c0c986ed5fd8875d6f0d8af965f4422cb9a5f0631"
     else
-      url "https://github.com/simonspoon/mirage/releases/download/v0.4.0/mirage-linux-amd64"
-      sha256 "9926c4b752f1963863a7b7d1438a4f0e0ac3ef93914f053fc9ff639a1dbf18ca"
+      url "https://github.com/simonspoon/mirage/releases/download/v0.5.0/mirage-linux-amd64"
+      sha256 "5c9dda4424d638daf11305e59edb3930b9f7228ca673f2808c18e31d076934d9"
     end
   end
 
