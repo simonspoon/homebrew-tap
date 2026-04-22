@@ -29,7 +29,24 @@ class Ivara < Formula
     bin.install binary => "ivara"
   end
 
+  def caveats
+    <<~EOS
+      To wire ivara into Claude Code, run:
+
+        ivara install-hooks
+
+      This writes ~/.claude/hook-scripts/ivara-capture.sh and merges the
+      canonical event entries into ~/.claude/settings.json (a .bak is saved
+      alongside). Re-running is a no-op. To remove:
+
+        ivara uninstall-hooks
+
+      For project-scoped install, pass --scope project.
+    EOS
+  end
+
   test do
     assert_match "ivara", shell_output("#{bin}/ivara --help")
+    assert_match "install-hooks", shell_output("#{bin}/ivara --help")
   end
 end
