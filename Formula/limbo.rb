@@ -1,26 +1,26 @@
 class Limbo < Formula
   desc "CLI task manager designed for LLMs and AI agents"
   homepage "https://github.com/simonspoon/limbo"
-  version "0.7.0"
+  version "0.8.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/limbo/releases/download/v0.7.0/limbo-darwin-arm64"
-      sha256 "815f5b9adad0cffdffc4b1933615a4e1333760641fbd0586609c0458d9e08ed5"
+      url "https://github.com/simonspoon/limbo/releases/download/v0.8.0/limbo-darwin-arm64"
+      sha256 "ec70382699d9156c49c1fe7d9213ddeca0179b006f9a581cba09f6ccbfbff2a1"
     else
-      url "https://github.com/simonspoon/limbo/releases/download/v0.7.0/limbo-darwin-amd64"
-      sha256 "2bafe361e62b9b45e4cd5fe7dd340c25c0b282075abbc27185fcacfb47b856e9"
+      url "https://github.com/simonspoon/limbo/releases/download/v0.8.0/limbo-darwin-amd64"
+      sha256 "99e97f314775d2f27bd35fa9421a031621244b5b212ef9885a5382513cad87b9"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/limbo/releases/download/v0.7.0/limbo-linux-arm64"
-      sha256 "2d0cabb4cfbc382233a4db17823a57b6a0808612b11f51f1a65d01e144d6449e"
+      url "https://github.com/simonspoon/limbo/releases/download/v0.8.0/limbo-linux-arm64"
+      sha256 "4fe5aac6d6a111855838b81054069ea1018f45139e527d21c3d2ef35221aec82"
     else
-      url "https://github.com/simonspoon/limbo/releases/download/v0.7.0/limbo-linux-amd64"
-      sha256 "afbbdb83905cc2c7f69846eae975242e964045c67cb2a4fa77bc2ee37f42d0cf"
+      url "https://github.com/simonspoon/limbo/releases/download/v0.8.0/limbo-linux-amd64"
+      sha256 "3228898e7a283e8d7c3ca93dcd04c300a43bf6ace5b2172328672f951268212d"
     end
   end
 
