@@ -1,26 +1,26 @@
 class Simaris < Formula
   desc "Knowledge management CLI with SQLite, FTS5, and graph-based linking"
   homepage "https://github.com/simonspoon/simaris"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.3.2/simaris-darwin-arm64"
-      sha256 "008567646c6fbcbcb8d9c9a3bd9c235593519da3ee0d62f5598948f0146b72a3"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.3.3/simaris-darwin-arm64"
+      sha256 "7ed90371c7d20468d6954a6b668081d67a59114ce2815b5d170b35851c3455f3"
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.3.2/simaris-darwin-amd64"
-      sha256 "7a4d0b894efac71721c1678388a596cca35ffe2da2d4ae937095b7f5a6d633e1"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.3.3/simaris-darwin-amd64"
+      sha256 "ab3f8e9257267615bc5d0f6ed9c9e1383fdc6a57275bcae3240d2743a767ca85"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.3.2/simaris-linux-arm64"
-      sha256 "e3f0923b4dccad53ae0831fb5baa3d287e514ad4a8c30d30658c84387e29bac0"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.3.3/simaris-linux-arm64"
+      sha256 "18adb69c3c5defdc26e7ee1f6ae8858f19591d45703b575bdd8ed41187757e7f"
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.3.2/simaris-linux-amd64"
-      sha256 "8d4699cb6039e417e89fb6db8ef6cac0d2d49f86e10c2fd7007fe4c004266ac7"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.3.3/simaris-linux-amd64"
+      sha256 "96dacb7bc11a00e4d1948499ae5c28d95e2f8234e2684d265aafcd949cb90bb9"
     end
   end
 
