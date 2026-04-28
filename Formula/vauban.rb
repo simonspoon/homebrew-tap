@@ -1,26 +1,26 @@
 class Vauban < Formula
   desc "Create, edit, and visualize mermaid diagrams from the CLI with a live dark-mode web viewer"
   homepage "https://github.com/simonspoon/vauban"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/vauban/releases/download/v0.1.0/vauban-darwin-arm64.tar.gz"
-      sha256 "600130c449557912b9571ca0bc98c746c51939d6035e97c7357127a4705da407"
+      url "https://github.com/simonspoon/vauban/releases/download/v0.2.0/vauban-darwin-arm64.tar.gz"
+      sha256 "7f1bf53a3a966cd2f829ba04135f26db9a5fb36a093cf86ddd3672926b6c98b2"
     else
-      url "https://github.com/simonspoon/vauban/releases/download/v0.1.0/vauban-darwin-amd64.tar.gz"
-      sha256 "4a43307be98ea1b94c7104f2669fec397d4cee7f3d340757e1aabfba77ff5600"
+      url "https://github.com/simonspoon/vauban/releases/download/v0.2.0/vauban-darwin-amd64.tar.gz"
+      sha256 "e05db943610436bb066cff90cbf092ff1fdb84333524cd4a58236815851580e1"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/vauban/releases/download/v0.1.0/vauban-linux-arm64.tar.gz"
-      sha256 "5ab34de6f4bccdaeaaed5b1ada62b950e25c358a13c17e33bfe90aaa05fedd66"
+      url "https://github.com/simonspoon/vauban/releases/download/v0.2.0/vauban-linux-arm64.tar.gz"
+      sha256 "7a283ea26319bf1103032b513bef4f209c1c06181329f067a0a37b6244e8217f"
     else
-      url "https://github.com/simonspoon/vauban/releases/download/v0.1.0/vauban-linux-amd64.tar.gz"
-      sha256 "cb504acc7090397c9f89aa8dda3dfe90cbedd7755c68cfefde467fca7f850b1b"
+      url "https://github.com/simonspoon/vauban/releases/download/v0.2.0/vauban-linux-amd64.tar.gz"
+      sha256 "c47e19c7bd6739c1a729bf171ccb0d49313661a7ce99394811a8443bad2e67ac"
     end
   end
 
