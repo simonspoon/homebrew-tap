@@ -1,41 +1,41 @@
 class Simaris < Formula
   desc "Knowledge management CLI with SQLite, FTS5, and graph-based linking"
   homepage "https://github.com/simonspoon/simaris"
-  version "0.4.1"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-darwin-arm64"
-      sha256 "398c5d292269071f8d11f83371302bfef785bce24e89cb4886500903d1b2ea71"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-darwin-arm64"
+      sha256 "7d04aba977eef91ad5867ccafcd3c4100a38621e7f2622652764df78feb5996a"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-server-darwin-arm64"
-        sha256 "d136d9774b19ff513b568a4ef3289cb3a80aeed03c72a1c035367875b6c35506"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-server-darwin-arm64"
+        sha256 "90a65e61746ee4b6507228b01a14f030a66df3ecba95d56d469eeb773834a44b"
       end
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-darwin-amd64"
-      sha256 "581b575b2a606341afc2a2000779f155284ade8847ad31f772119b07cfe7c562"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-darwin-amd64"
+      sha256 "13bfa771b6caa99912346a4125bfd83e0520b0987576cd9dfa7c0c0e3286231b"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-server-darwin-amd64"
-        sha256 "214077eddb7ec8d8da9cd4a267f7b4734430dee580c3b92ddd28a214ff464d05"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-server-darwin-amd64"
+        sha256 "af20b0dea36033fd1e2cea0f85cc63b6734371056be3241be681464c17de13df"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-linux-arm64"
-      sha256 "7caeeb6c5556073c34d62a4e90943eabf11a1d8d08577713eb50c07e799b8be5"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-linux-arm64"
+      sha256 "06222fd3fca8db1f1197c35fa2131facafd279526ab59156007b8571b356fbb8"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-server-linux-arm64"
-        sha256 "e83d2f70a2618ae223a0081cb32d608e7fba5352fda32bed983ae9ec523e6cf7"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-server-linux-arm64"
+        sha256 "ae735c8df442ea9c25704eade083564994d886cc083e8341e2d488342e739138"
       end
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-linux-amd64"
-      sha256 "0e89bbd9aa82f4f6a7d2f8ab26ab0149a30a2085a0394c619876f4fba8524556"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-linux-amd64"
+      sha256 "f9baf1c92b7c9805baf4c28ceefa854181376a1cfbe0747d734d90dbf1d12f02"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.4.1/simaris-server-linux-amd64"
-        sha256 "810df63b2b4aef4b390b799590b96c7780b821246536a8cda1b876edb5319acb"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.5.0/simaris-server-linux-amd64"
+        sha256 "29ff0376a76e341e90e2a26151b905c8c7657722bf6e79d18cd353381a5a4647"
       end
     end
   end
