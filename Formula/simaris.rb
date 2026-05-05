@@ -4,10 +4,10 @@ class Simaris < Formula
   version "0.6.0"
   license "MIT"
 
-  # Intel Mac (x86_64-apple-darwin) is unsupported from v0.6.0+ — lance index
-  # uses AVX-512 intrinsics that the Apple Intel toolchain cannot link.
-  # Apple Silicon Macs use the native arm64 build below. Intel Mac users:
-  # pin to v0.5.2 (FTS5-only) or use Linux via x86 emulation.
+  # Intel Mac binaries built locally (host-native cargo build); CI cannot
+  # cross-compile to x86_64-apple-darwin because lance-index references an
+  # AVX-512 intrinsic that the Apple Intel link path cannot resolve, even
+  # though it is a runtime-dispatched code path. See M5.7 sitrep.
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/simaris/releases/download/v0.6.0/simaris-darwin-arm64"
@@ -17,7 +17,12 @@ class Simaris < Formula
         sha256 "e4ad0219299996cb86bdb86bc24d3af82c86a38218a95683b838a51c556e324c"
       end
     else
-      odie "simaris v0.6.0+ does not support Intel Macs (lance AVX-512 link issue). Pin to v0.5.2 or use the Linux build under x86 emulation."
+      url "https://github.com/simonspoon/simaris/releases/download/v0.6.0/simaris-darwin-amd64"
+      sha256 "e231ec6ad5728de144d30af70a763f27a244b01eb8537287379cc97f4071b699"
+      resource "server" do
+        url "https://github.com/simonspoon/simaris/releases/download/v0.6.0/simaris-server-darwin-amd64"
+        sha256 "a2d2cb7c992a5287727628f948ddc3e3705591bb9734e8a57ccf124b776929d2"
+      end
     end
   end
 
