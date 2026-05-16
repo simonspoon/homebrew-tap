@@ -1,7 +1,7 @@
 class Simaris < Formula
   desc "Knowledge management CLI with SQLite, FTS5, and graph-based linking"
   homepage "https://github.com/simonspoon/simaris"
-  version "0.11.0"
+  version "0.12.0"
   license "MIT"
 
   # Intel Mac binaries built locally (host-native cargo build); CI cannot
@@ -10,36 +10,36 @@ class Simaris < Formula
   # though it is a runtime-dispatched code path. See M5.7 sitrep.
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-darwin-arm64"
-      sha256 "0619e1e2a616ef733a11e53bedb096853eb15e79c369f206081d792a11092776"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-darwin-arm64"
+      sha256 "bd34d982c7e3924dd523826d91f2487bb9922867653162b5fe7ddc4fb76c3bd4"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-server-darwin-arm64"
-        sha256 "ba116e927c19e7eb6c128361091bbb69dc186bedb0c07ecef68fa7d079a4a570"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-server-darwin-arm64"
+        sha256 "4b6e6e4c3f183f137479f3716d2f2aee1003b1a5e59f0310d9136d9c2a436dfb"
       end
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-darwin-amd64"
-      sha256 "949c8c4f31db430c5963a60a36a02fdfd7555419e98d78a21f487491a6719ce9"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-darwin-amd64"
+      sha256 "cdbb521d566305cc9b6e00801335570ce18a79c7ebfb710a836338cbde344607"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-server-darwin-amd64"
-        sha256 "b08b5f3c72dee268a9f9f3216b5bfddc235747c323d561f201123ce74a028b42"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-server-darwin-amd64"
+        sha256 "04bcf4855f160b9c8fa4ab7b7382ec307acc88083245f61ddb0f79db9b5d33d2"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-linux-arm64"
-      sha256 "e7cc409b29b024176bb169b0a2830460bf9d0ff29d1ba9fdce9c0cce7a38ffba"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-linux-arm64"
+      sha256 "234cf43031514358962c108ef10c478057c1586f6a40bb3b2f0c7d9f365a0c51"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-server-linux-arm64"
-        sha256 "b5dd0ee7962c95bff2e9adc836295cb32bdb1a99bdc53b29280b9eddc1e58698"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-server-linux-arm64"
+        sha256 "7b03da8acd3b2792907af81e1817c5b27e26e085188a85135701d014e2e3f931"
       end
     else
-      url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-linux-amd64"
-      sha256 "47511fbbdc26b1850b90cda81f68ed07f17141fc7c63614c4e7cba0860f00aff"
+      url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-linux-amd64"
+      sha256 "116c287c64b3f7c7b985a86617af245630976f219159c64b20baea77c6ca86a4"
       resource "server" do
-        url "https://github.com/simonspoon/simaris/releases/download/v0.11.0/simaris-server-linux-amd64"
-        sha256 "c2303c6112212108889860e424d020f8475448fefd90a55f33150bccce2c1df1"
+        url "https://github.com/simonspoon/simaris/releases/download/v0.12.0/simaris-server-linux-amd64"
+        sha256 "58495a670e8d82ac7c7c79bf295e9d35c61ee33bd9fdb5e638cda9ad3c7789ed"
       end
     end
   end
