@@ -1,26 +1,26 @@
 class Nyx < Formula
   desc "Index and search Claude Code conversation history"
   homepage "https://github.com/simonspoon/nyx"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/nyx/releases/download/v0.2.2/nyx-darwin-arm64"
-      sha256 "e40fca81e8975d080f9990ff4ed57c5bf48be4a097519e40a1399f6d1d8a392d"
+      url "https://github.com/simonspoon/nyx/releases/download/v0.2.3/nyx-darwin-arm64"
+      sha256 "c03d85bb1692cd27b8f94e87df0c097b4db8c8a8fdf69bdc86d9ecd0cab02e60"
     else
-      url "https://github.com/simonspoon/nyx/releases/download/v0.2.2/nyx-darwin-amd64"
-      sha256 "08c356f3f7489641f4c69a72b76f7d71a3f8b4f43c32a5719daa786552b9db27"
+      url "https://github.com/simonspoon/nyx/releases/download/v0.2.3/nyx-darwin-amd64"
+      sha256 "e997c3cbc2265b2b2d7a54b995b83233ead89ccc07757b1f82d8717e8e8af512"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/nyx/releases/download/v0.2.2/nyx-linux-arm64"
-      sha256 "18663a018e2766110d10e058d50d9ed4002a29b023da94152c446fcaea701515"
+      url "https://github.com/simonspoon/nyx/releases/download/v0.2.3/nyx-linux-arm64"
+      sha256 "5ad6c414abe1d15bdcbe87c08cb3354fefc06333a68d97eeb394538760cdb90f"
     else
-      url "https://github.com/simonspoon/nyx/releases/download/v0.2.2/nyx-linux-amd64"
-      sha256 "94e29fde8301b6465df5974966a65e302289026dba9985adcb5f307569187360"
+      url "https://github.com/simonspoon/nyx/releases/download/v0.2.3/nyx-linux-amd64"
+      sha256 "28cfd1ce11e94df0191c88885e7378fedb8c80dc56551e178c2ed438a2a2a378"
     end
   end
 
