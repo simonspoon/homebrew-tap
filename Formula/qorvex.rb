@@ -1,7 +1,7 @@
 class Qorvex < Formula
   desc "iOS Simulator and device automation toolkit for macOS"
   homepage "https://github.com/simonspoon/qorvex"
-  version "0.2.8"
+  version "0.2.9"
   license "MIT"
 
   depends_on :macos
@@ -10,10 +10,10 @@ class Qorvex < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-arm64.tar.gz"
-      sha256 "fb036049a142da87982ba061559fdef479f7fa17e2bbf44b138a8dd272cc18f4"
+      sha256 "4b0f4f221bced08d95ba17e8cce01e8a7b422f6a66b67dadeefe1b8bb67d5f3f"
     else
       url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-x86_64.tar.gz"
-      sha256 "c60a188134dd43bd39972cb3f840c3abf8340f1def5a1b4c40d2c633b900e259"
+      sha256 "812694719755566c6afec0b97eccc7ee39a654d4edfbd49c05b58b9aaa165bb5"
     end
   end
 
