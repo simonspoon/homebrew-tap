@@ -25,12 +25,17 @@ class Qorvex < Formula
     bin.install "qorvex-streamer"
 
     (share/"qorvex/agent").install Dir["agent/*"]
+    (share/"qorvex/agent-android").install Dir["agent-android/*"]
   end
 
   def caveats
     <<~EOS
-      The agent source is installed at #{share}/qorvex/agent.
-      It builds and deploys automatically on first use.
+      The iOS agent source is installed at #{share}/qorvex/agent.
+      It builds and deploys automatically on first use (requires Xcode).
+
+      The Android agent source is installed at #{share}/qorvex/agent-android.
+      It builds and deploys automatically on first use (requires a JDK and the
+      Android SDK with `adb` on PATH or ANDROID_HOME set).
     EOS
   end
 
