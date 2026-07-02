@@ -35,5 +35,10 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update ${{ github.event.client_payload.tool }} to ${{ github.event.client_payload.version }}"
-            git push
+            # Releases dispatch one event per formula; near-simultaneous runs
+            # can slip past the concurrency group, so rebase-and-retry the push.
+            for i in 1 2 3; do
+              git push && break
+              git pull --rebase
+            done
           fi
