@@ -30,7 +30,7 @@ TMPDIR="$(mktemp -d)"
 trap 'rm -rf "$TMPDIR"' EXIT
 
 echo "Downloading release assets for ${REPO}@${TAG}..."
-gh release download "$TAG" --repo "$REPO" --dir "$TMPDIR" --pattern '*.tar.gz' --pattern '*-darwin-*' --pattern '*-linux-*' --pattern '*-macos-*' 2>/dev/null || true
+gh release download "$TAG" --repo "$REPO" --dir "$TMPDIR" --pattern '*.tar.gz' --pattern '*-darwin-*' --pattern '*-linux-*' --pattern '*-macos-*' --pattern '*.zip' 2>/dev/null || true
 
 # Build checksum file: each line is "filename sha256"
 CHECKSUM_FILE="$TMPDIR/.checksums"
