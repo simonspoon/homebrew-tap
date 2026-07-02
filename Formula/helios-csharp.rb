@@ -1,12 +1,12 @@
 class HeliosCsharp < Formula
   desc "Roslyn helper for helios: compiler-accurate C# reference resolution"
   homepage "https://github.com/simonspoon/helios"
-  version "0.16.0"
+  version "0.16.1"
   license "MIT"
 
   # Pure IL, framework-dependent — one platform-neutral bundle for every OS/arch.
-  url "https://github.com/simonspoon/helios/releases/download/v0.16.0/helios-roslyn.zip"
-  sha256 "2d01dcdaf7b871bf007557f32d04043c40c6981278fb7b2b2f6655971f660d2d"
+  url "https://github.com/simonspoon/helios/releases/download/v0.16.1/helios-roslyn.zip"
+  sha256 "7a6d50105e07f6306faf0a8fbe31ead6b35154800188a05e6e2c77976ccab9c9"
 
   depends_on "helios"
 
