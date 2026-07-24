@@ -1,6 +1,6 @@
 cask "ash-md" do
-  version "0.1.0"
-  sha256 "affe734456b9a72ebeeb5a8d055ce5515f635bbfc96ad006722a7eabd24199b8"
+  version "0.2.0"
+  sha256 "7f8994f94ab81b50a4ae043022272e0b252181d8aad418edfcd33c4b645e5f37"
 
   url "https://github.com/simonspoon/ash-md/releases/download/v#{version}/ash-md_#{version}_universal.dmg"
   name "ash-md"
