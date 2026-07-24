@@ -32,5 +32,6 @@ brew install <formula>
 
 | Cask | Description |
 |------|-------------|
+| `ash-md` | Native markdown viewer/editor for macOS |
 | `ordis` | Desktop interface for Claude Code |
 | `wisp` | Desktop UI design tool for agents |
