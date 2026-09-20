@@ -21,8 +21,6 @@ class Qorvex < Formula
     bin.install "qorvex"
     bin.install "qorvex-server"
     bin.install "qorvex-repl"
-    bin.install "qorvex-live"
-    bin.install "qorvex-streamer"
 
     (share/"qorvex/agent").install Dir["agent/*"]
     (share/"qorvex/agent-android").install Dir["agent-android/*"]
