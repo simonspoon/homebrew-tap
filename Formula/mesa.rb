@@ -1,26 +1,26 @@
 class Mesa < Formula
   desc "Local-first project and task management for humans and agents"
   homepage "https://github.com/simonspoon/mesa"
-  version "1.3.0"
+  version "1.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/mesa/releases/download/v1.3.0/mesa-darwin-arm64"
-      sha256 "4bc841f6509bb47ca207cab7e5d396a5af644c35381163c1738075aa4d751875"
+      url "https://github.com/simonspoon/mesa/releases/download/v1.4.0/mesa-darwin-arm64"
+      sha256 "360c7891495478a32fdbe44cdc91ed5f11e482e033249b4371163cf8540cd8dc"
     else
-      url "https://github.com/simonspoon/mesa/releases/download/v1.3.0/mesa-darwin-amd64"
-      sha256 "a804209aa3241a9363d9266ea57d0182fb8c3bda84df2351edb159372a7e050f"
+      url "https://github.com/simonspoon/mesa/releases/download/v1.4.0/mesa-darwin-amd64"
+      sha256 "578e65619875820df300e892a1dbe0774ad712636dfa031e5f7d7a748ac39d2c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/mesa/releases/download/v1.3.0/mesa-linux-arm64"
-      sha256 "f067febe0ea54d896a540800b4dd73646ec5052fdb22996acd9800ba3e7f4108"
+      url "https://github.com/simonspoon/mesa/releases/download/v1.4.0/mesa-linux-arm64"
+      sha256 "a69cc7ead82d3c4324c004be498ea2ac2dc7a6f433d5d7ac1b33bdd49e84be42"
     else
-      url "https://github.com/simonspoon/mesa/releases/download/v1.3.0/mesa-linux-amd64"
-      sha256 "37b8b4dd886b8ef4fe092254aa4846f71f75b501e572471072fd58ce6de51a33"
+      url "https://github.com/simonspoon/mesa/releases/download/v1.4.0/mesa-linux-amd64"
+      sha256 "31f2e77de0408dfc81f4f296d2c8914f28a30bc926d2cbaf81583176e13dced2"
     end
   end
 
