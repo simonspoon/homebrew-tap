@@ -19,7 +19,7 @@ brew install <formula>
 | `limbo` | CLI task manager designed for LLMs and AI agents |
 | `loki` | Desktop app automation CLI for macOS QA testing |
 | `mirage` | Swagger 2.0 mock API server with SQLite-backed fake data |
-| `naru` | Local-first project and task management for humans and agents (formerly `mesa`; also installs a `mesa` alias) |
+| `naru` | Local-first project and task management for humans and agents (formerly `mesa`) |
 | `nyx` | Index and search Claude Code conversation history |
 | `qorvex` | iOS Simulator and device automation toolkit for macOS |
 | `simaris` | Knowledge management CLI with SQLite, FTS5, and graph-based linking |

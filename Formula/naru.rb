@@ -3,6 +3,7 @@ class Naru < Formula
   homepage "https://github.com/simonspoon/naru"
   version "1.8.0"
   license "MIT"
+  revision 1
 
   on_macos do
     if Hardware::CPU.arm?
@@ -27,11 +28,9 @@ class Naru < Formula
   def install
     binary = Dir["naru-*"].first || "naru"
     bin.install binary => "naru"
-    bin.install_symlink "naru" => "mesa"
   end
 
   test do
     assert_match "naru", shell_output("#{bin}/naru --help")
-    assert_match "mesa", shell_output("#{bin}/mesa --help")
   end
 end
