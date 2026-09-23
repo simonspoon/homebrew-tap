@@ -163,21 +163,45 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# Case D — bare-binary formula: no tarball, install block untouched.
+# Case D — bare-binary formula: no tarball, install block untouched (so naru's
+# mesa symlink survives). naru.rb's urls still name the pre-rename mesa-*
+# assets; the release ships naru-*, so the urls must follow.
 # ---------------------------------------------------------------------------
 FIX_D="$WORK/fix-d"
 mkdir -p "$FIX_D"
-for asset in mesa-darwin-arm64 mesa-darwin-amd64 mesa-linux-arm64 mesa-linux-amd64; do
-  printf '#!/bin/sh\n' > "$FIX_D/$asset"
+for asset in naru-darwin-arm64 naru-darwin-amd64 naru-linux-arm64 naru-linux-amd64; do
+  printf '#!/bin/sh\necho %s\n' "$asset" > "$FIX_D/$asset"
 done
 
 TREE_D="$(new_tree d)"
-BEFORE_D="$(install_block "$TREE_D/Formula/mesa.rb")"
+BEFORE_D="$(install_block "$TREE_D/Formula/naru.rb")"
 export FAKE_GH_FIXTURES="$FIX_D"
-"$TREE_D/scripts/update-formula.sh" mesa 0.7.0 simonspoon/mesa > "$WORK/d.log" 2>&1 ||
+"$TREE_D/scripts/update-formula.sh" naru 0.7.0 simonspoon/naru > "$WORK/d.log" 2>&1 ||
   { fail "D: script exited non-zero"; sed 's|^|    |' "$WORK/d.log"; }
 check "D: bare-binary formula's def install is byte-identical" \
-  "$BEFORE_D" "$(install_block "$TREE_D/Formula/mesa.rb")"
+  "$BEFORE_D" "$(install_block "$TREE_D/Formula/naru.rb")"
+if grep -q 'bin.install_symlink "naru" => "mesa"' "$TREE_D/Formula/naru.rb"; then
+  pass "D: mesa symlink kept"
+else
+  fail "D: mesa symlink dropped"
+fi
+D_OK=1
+for asset in naru-darwin-arm64 naru-darwin-amd64 naru-linux-arm64 naru-linux-amd64; do
+  want="$(shasum -a 256 "$FIX_D/$asset" | awk '{print $1}')"
+  if ! grep -A1 -F "releases/download/v0.7.0/${asset}\"" "$TREE_D/Formula/naru.rb" |
+       grep -q "sha256 \"${want}\""; then
+    D_OK=0; echo "  url/sha256 for ${asset} not updated"
+  fi
+done
+if grep -E '^[[:space:]]*url ' "$TREE_D/Formula/naru.rb" | grep -q 'mesa-'; then
+  D_OK=0; echo "  a url still names a mesa-* asset"
+fi
+if [[ "$D_OK" -eq 1 ]]; then
+  pass "D: urls renamed to the naru-* assets with their sha256"
+else
+  fail "D: renamed assets not picked up"
+  sed 's|^|    |' "$WORK/d.log"
+fi
 
 # ---------------------------------------------------------------------------
 # Case E — existing version/url/sha256 rewriting still works (case A's tree).

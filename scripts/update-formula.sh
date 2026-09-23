@@ -63,6 +63,19 @@ OLD_TAG_PATTERN='releases/download/v[0-9][0-9.]*/'
 NEW_TAG_PREFIX="releases/download/${TAG}/"
 sed -i '' "s|${OLD_TAG_PATTERN}|${NEW_TAG_PREFIX}|g" "$FORMULA_FILE"
 
+# A formula renamed upstream (mesa -> naru) still names the old assets on its
+# url lines. When a url's asset was not downloaded but "<tool>-<same suffix>"
+# was, point the url at that asset. A formula whose assets were all downloaded
+# is left untouched.
+for asset in $(sed -n 's|^[[:space:]]*url "\(.*\)".*|\1|p' "$FORMULA_FILE" | sed 's|.*/||' | sort -u); do
+  [[ -z "$(get_checksum "$asset")" ]] || continue
+  renamed="${TOOL}-${asset#*-}"
+  if [[ "$renamed" != "$asset" && -n "$(get_checksum "$renamed")" ]]; then
+    echo "  Renaming asset ${asset} -> ${renamed}"
+    sed -i '' "s|/${asset}\"|/${renamed}\"|" "$FORMULA_FILE"
+  fi
+done
+
 # Update sha256 values by matching the url on the preceding line
 TEMP_FORMULA="$(mktemp)"
 prev_url=""
