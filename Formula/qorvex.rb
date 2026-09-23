@@ -1,7 +1,7 @@
 class Qorvex < Formula
   desc "iOS Simulator and device automation toolkit for macOS"
   homepage "https://github.com/simonspoon/qorvex"
-  version "0.2.13"
+  version "0.3.2"
   license "MIT"
 
   depends_on :macos
@@ -10,10 +10,10 @@ class Qorvex < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-arm64.tar.gz"
-      sha256 "fd430d189ad00c19b9db91e532a31760bc0cc3d00d9c5005919c314ff8d0856d"
+      sha256 "e65332b5de2930179befbd96e23c87b8e17aa81e169d29cf1d4ca880dcbce4b8"
     else
       url "https://github.com/simonspoon/qorvex/releases/download/v#{version}/qorvex-macos-x86_64.tar.gz"
-      sha256 "29b2687e1d90bf03a3f753761c87e244c16bdfcae3491fa11923a64eb8fd4103"
+      sha256 "da61e079dc25d9fd830f84da24dab4671bb481bd2350843789208185cb945dc7"
     end
   end
 
@@ -21,8 +21,6 @@ class Qorvex < Formula
     bin.install "qorvex"
     bin.install "qorvex-server"
     bin.install "qorvex-repl"
-    bin.install "qorvex-live"
-    bin.install "qorvex-streamer"
 
     (share/"qorvex/agent").install Dir["agent/*"]
     (share/"qorvex/agent-android").install Dir["agent-android/*"]
