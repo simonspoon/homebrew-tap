@@ -1,5 +1,5 @@
 class Naru < Formula
-  desc "Local-first project and task management for humans and agents"
+  desc "Local-first workspace for planning and running work with Claude Code agents"
   homepage "https://github.com/simonspoon/naru"
   version "1.11.0"
   license "MIT"
