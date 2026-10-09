@@ -30,6 +30,24 @@ class Naru < Formula
     bin.install binary => "naru"
   end
 
+  def caveats
+    <<~EOS
+      Run Naru as a background service:
+        brew services start naru
+      then open http://127.0.0.1:7770
+    EOS
+  end
+
+  service do
+    run [opt_bin/"naru", "serve"]
+    keep_alive true # the UI restart exits 0 after spawning a child; launchd reaps it, so relaunch
+    working_dir Dir.home
+    log_path var/"log/naru.log"
+    error_log_path var/"log/naru.log"
+    # launchd's PATH lacks claude (~/.local/bin); agents are spawned by name.
+    environment_variables PATH: "#{Dir.home}/.local/bin:#{std_service_path_env}"
+  end
+
   test do
     assert_match "naru", shell_output("#{bin}/naru --help")
   end
