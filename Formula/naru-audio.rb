@@ -1,26 +1,26 @@
 class NaruAudio < Formula
   desc "Local speech-to-text and text-to-speech daemon for Naru"
   homepage "https://github.com/simonspoon/naru-audio"
-  version "0.9.0"
+  version "0.10.0"
   license "GPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.9.0/naru-audio-darwin-arm64"
-      sha256 "5a0b0e6859482b6a8c132281d2e3d67f322ca0cb0b417f580c86e08ef48e2a51"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.10.0/naru-audio-darwin-arm64"
+      sha256 "9cab8d98ca5102570a05d18b305a969b33e2e9e0ecb51ead031c0b2ccacf340c"
     else
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.9.0/naru-audio-darwin-amd64"
-      sha256 "a51b53f046cc9bba0efaff414c61f0543a6eab68d8c6a05242221e3f3ccff0fc"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.10.0/naru-audio-darwin-amd64"
+      sha256 "c8024da024af7bfc1f09fc6369c8c63c4d1bf1bbf628337b5ff585e90e7b77a8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.9.0/naru-audio-linux-arm64"
-      sha256 "6234281a098373efd0f1629d7c696153f0bcd56dd6f0bb17061b31138c2b9db1"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.10.0/naru-audio-linux-arm64"
+      sha256 "c3d956cd220e8d1857d72d358b1c844bda6ef666bb16ff0547e621d39c100bbd"
     else
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.9.0/naru-audio-linux-amd64"
-      sha256 "96a48921abd6b4ed31891182bf443c11d92db88a010ef6ad2cfc1fe8337557b3"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.10.0/naru-audio-linux-amd64"
+      sha256 "f8f0ca12287a859e452607b6a1f9189b813d4221f56c0aa615437b9ee0c2a173"
     end
   end
 
