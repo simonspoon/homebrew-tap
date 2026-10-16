@@ -1,27 +1,27 @@
 class Naru < Formula
   desc "Local-first workspace for planning and running work with Claude Code agents"
   homepage "https://github.com/simonspoon/naru"
-  version "2.14.0"
+  version "2.15.0"
   license "MIT"
   revision 1
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru/releases/download/v2.14.0/naru-darwin-arm64"
-      sha256 "a146400aac6f9f2608721d232ba04c9d99af48ed7312ed31b57f7f78c3c59cf5"
+      url "https://github.com/simonspoon/naru/releases/download/v2.15.0/naru-darwin-arm64"
+      sha256 "43f45cf6746639d6f935547cef865fd0e9c5f1c76c0cbde1fe1abd3d73943ad1"
     else
-      url "https://github.com/simonspoon/naru/releases/download/v2.14.0/naru-darwin-amd64"
-      sha256 "8790d2805281e942d05d5cfacad1e51bb5c0f73638f0036e0b26cc2fe013b002"
+      url "https://github.com/simonspoon/naru/releases/download/v2.15.0/naru-darwin-amd64"
+      sha256 "7d3841158d3afad1f92fb03e6710ccbbedb05623b2104fa43748ecc4b613de6d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru/releases/download/v2.14.0/naru-linux-arm64"
-      sha256 "49e0c329d9eabebb46f39e55191043c88f1c1b7cae410efe5180d847cfac9984"
+      url "https://github.com/simonspoon/naru/releases/download/v2.15.0/naru-linux-arm64"
+      sha256 "9d7a7488bf5fa0513174c6b0ad4f1b4894f514a22845e7736b4e5a08141006fe"
     else
-      url "https://github.com/simonspoon/naru/releases/download/v2.14.0/naru-linux-amd64"
-      sha256 "5b454fb5030356777d1feac8de0b0c20881b355fd9dafe33dc5c55abe2fddb51"
+      url "https://github.com/simonspoon/naru/releases/download/v2.15.0/naru-linux-amd64"
+      sha256 "9c39d762d835c30353ab57611809d7ba26c15df9af47eac7de98971aacbd0ba6"
     end
   end
 
