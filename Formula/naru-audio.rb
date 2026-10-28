@@ -8,6 +8,12 @@ class NaruAudio < Formula
     if Hardware::CPU.arm?
       url "https://github.com/simonspoon/naru-audio/releases/download/v0.15.0/naru-audio-darwin-arm64"
       sha256 "a80c7e742fb75952e154eff7059b28f7b502c4677fde748311ddd9b30903e93a"
+
+      # MLX loads its kernels from mlx.metallib beside the binary.
+      resource "metallib" do
+        url "https://github.com/simonspoon/naru-audio/releases/download/v0.15.0/naru-audio-darwin-arm64.metallib"
+        sha256 "b142cec7b8b7b3cb71922fa10c67461ef89fb36338c683915e814afa4bb16887"
+      end
     else
       url "https://github.com/simonspoon/naru-audio/releases/download/v0.15.0/naru-audio-darwin-amd64"
       sha256 "d88b93a6bda5a89166dd940e4db11ce17e5f5d9185cd40d5177dee63599baf17"
@@ -27,6 +33,9 @@ class NaruAudio < Formula
   def install
     binary = Dir["naru-audio-*"].first || "naru-audio"
     bin.install binary => "naru-audio"
+    return if !OS.mac? || !Hardware::CPU.arm?
+
+    resource("metallib").stage { bin.install "naru-audio-darwin-arm64.metallib" => "mlx.metallib" }
   end
 
   def caveats
