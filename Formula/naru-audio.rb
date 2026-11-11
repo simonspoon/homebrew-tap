@@ -1,32 +1,32 @@
 class NaruAudio < Formula
   desc "Local speech-to-text and text-to-speech daemon for Naru"
   homepage "https://github.com/simonspoon/naru-audio"
-  version "0.16.0"
+  version "0.17.0"
   license "GPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.16.0/naru-audio-darwin-arm64"
-      sha256 "1fd4e3db20866b48c64d9c022da08ee6bba5d181ebabe787097a7745beb6b91d"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.17.0/naru-audio-darwin-arm64"
+      sha256 "c22da77bfa50411771fde772c2d2795e3e3b82dc5a8a28b91b1cd667af0f69f4"
 
       # MLX loads its kernels from mlx.metallib beside the binary.
       resource "metallib" do
-        url "https://github.com/simonspoon/naru-audio/releases/download/v0.16.0/naru-audio-darwin-arm64.metallib"
+        url "https://github.com/simonspoon/naru-audio/releases/download/v0.17.0/naru-audio-darwin-arm64.metallib"
         sha256 "28f63a7718f3235da8a861330d6ec4cfa8edfed32449e20e04ce42081812e328"
       end
     else
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.16.0/naru-audio-darwin-amd64"
-      sha256 "12b5ac2023cb6535774586592d324abe49ef5644e5ae8250444b28f69dc151c5"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.17.0/naru-audio-darwin-amd64"
+      sha256 "5deb54782121971e8e314cf825f1183a9af915c386335a2c55955a5bab1fbd05"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.16.0/naru-audio-linux-arm64"
-      sha256 "7210d5aa69fe48bc9dd5c32fa983f16e49c309470079e91750d05c82be9fb38b"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.17.0/naru-audio-linux-arm64"
+      sha256 "7b6a51be6b232f9022c5419d4795497395162b4d33d329cd47f5a848c3560cd0"
     else
-      url "https://github.com/simonspoon/naru-audio/releases/download/v0.16.0/naru-audio-linux-amd64"
-      sha256 "506a765132f861e6a043730aef09352960e12ed9e731234462891149287cd772"
+      url "https://github.com/simonspoon/naru-audio/releases/download/v0.17.0/naru-audio-linux-amd64"
+      sha256 "a2dca67803dcdbb7112ee1ef4a725e4e5e928f2a0e4c7b490e1df8a98172dbe2"
     end
   end
 
